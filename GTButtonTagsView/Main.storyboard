@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3DE-es-N7h">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--首页-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ni3-q3-WgJ">
+                                <rect key="frame" x="143" y="319" width="90" height="30"/>
+                                <state key="normal" title="动态布局标签">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushMethod:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HPQ-Os-b16"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="ni3-q3-WgJ" secondAttribute="centerX" id="bkW-bY-LRG"/>
+                            <constraint firstAttribute="centerY" secondItem="ni3-q3-WgJ" secondAttribute="centerY" id="hSV-Gp-aCQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="首页" id="iSK-Kc-sMW"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="Ap9-SA-33B" kind="push" identifier="GTDynamicLabelsController" id="VOA-9O-3km"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="813.5" y="474.5"/>
+        </scene>
+        <!--动态布局标签-->
+        <scene sceneID="xGI-j5-OQK">
+            <objects>
+                <viewController id="Ap9-SA-33B" customClass="GTButtonTagsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZiN-eW-u9V"/>
+                        <viewControllerLayoutGuide type="bottom" id="heH-Tu-3Hl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DrT-qE-t1y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ss3-Hu-Xgm" customClass="GTButtonTagsView">
+                                <rect key="frame" x="38" y="64" width="300" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="TDa-YR-bx5"/>
+                                    <constraint firstAttribute="width" secondItem="Ss3-Hu-Xgm" secondAttribute="height" multiplier="1:1" id="XDj-zm-OTp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Ss3-Hu-Xgm" secondAttribute="centerX" id="GiT-Lg-FmM"/>
+                            <constraint firstItem="Ss3-Hu-Xgm" firstAttribute="top" secondItem="ZiN-eW-u9V" secondAttribute="bottom" id="jdp-Hn-cAl"/>
+                            <constraint firstAttribute="centerY" secondItem="Ss3-Hu-Xgm" secondAttribute="centerY" id="vyi-Pl-wv6"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="vyi-Pl-wv6"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="动态布局标签" id="S8i-Pf-foM"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="labelsView" destination="Ss3-Hu-Xgm" id="mab-3t-vsw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pat-Or-bDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1238.5" y="474.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OYW-91-Bpc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3DE-es-N7h" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7YL-3i-C0b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="l7a-gZ-GpK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fk5-Qn-Gqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="397" y="475"/>
+        </scene>
+    </scenes>
+</document>
